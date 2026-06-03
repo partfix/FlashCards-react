@@ -1,4 +1,3 @@
-import { use, useState } from "react";
 import "./index.css";
 
 const questions = [
@@ -38,28 +37,14 @@ const questions = [
 
 export default function App() {
   return (
-    <div className="App">
-      <FlashCards />
-    </div>
-  );
-}
-
-function FlashCards() {
-  const [selected, setSelected] = useState(null)
-
-  function handleSelect(id) {
-    setSelected(id !== selected ? id : null)
-  }
-
-  return (
-    <div className="flashcards">
-      {questions && (questions.map((questions) =>
-        <div key={questions.id} onClick={(e) => handleSelect(questions.id)} className={questions.id === selected ? "selected" : ''}>
-          <p>{questions.id === selected ? questions.answer : questions.question}</p>
-        </div>
-      ))
-      }
-    </div >
+    <FlashCards />
   )
 }
 
+function FlashCards() {
+  return (
+    <div>
+      {questions}
+    </div>
+  )
+}
