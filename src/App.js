@@ -49,7 +49,6 @@ function FlashCards() {
     setSelected(catchId !== selected ? catchId : null);
   }
 
-
   return (
     <div className="flashcards">
       {questions.map(e => (
